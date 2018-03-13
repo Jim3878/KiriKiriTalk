@@ -92,7 +92,6 @@
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
-    <Compile Include="Assets\KirikiriTalk\BreakOrder.cs" />
     <Compile Include="Assets\KirikiriTalk\BreakOrderEventArgs.cs" />
     <Compile Include="Assets\KirikiriTalk\CharaBoard.cs" />
     <Compile Include="Assets\KirikiriTalk\DialogController.cs" />
@@ -110,8 +109,25 @@
     <Compile Include="Assets\KirikiriTalk\DialogSystemCommand\Parser\ShowTalkDialog.cs" />
     <Compile Include="Assets\KirikiriTalk\DialogSystemCommand\Parser\WaitClick.cs" />
     <Compile Include="Assets\KirikiriTalk\DialogSystemCommand\Parser\WaitSeconds.cs" />
+    <Compile Include="Assets\KirikiriTalk\DialogUnity.cs" />
+    <Compile Include="Assets\KirikiriTalk\DialogUnityUtility.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogCompiler.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\CharOutput.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\CharOutputFactory.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\PauseUnit.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\PauseUnitFactory.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\baseClass\BaseDialogUnit.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\baseClass\BaseDialogUnitFactory.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\baseClass\IDialogUnit.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\baseClass\IDialogUnitFactory.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriKiriTalk.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\TextStyle.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Utility\KiriKiriTalkUtility.cs" />
     <Compile Include="Assets\KirikiriTalk\KirikiriController.cs" />
     <Compile Include="Assets\KirikiriTalk\TextHandlerReplacer.cs" />
+    <Compile Include="Assets\KirikiriTalk\VariableToken.cs" />
     <Compile Include="Assets\Test.cs" />
     <Compile Include="Assets\YehTool\Clock.cs" />
     <Compile Include="Assets\YehTool\DefaultTool.cs" />

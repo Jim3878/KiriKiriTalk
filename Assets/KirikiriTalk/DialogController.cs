@@ -6,7 +6,7 @@ namespace KirikiriTalk
 {
     public class DialogController
     {
-        public string text;
+        public string dialog;
 
         int _nextIndex;
         string _currentChar;
@@ -32,7 +32,6 @@ namespace KirikiriTalk
         }
 
         DialogUnit _currentDialogUnit;
-
         public DialogUnit currentDialogUnit
         {
             get
@@ -45,9 +44,9 @@ namespace KirikiriTalk
             }
         }
 
-        public DialogController(string text)
+        public DialogController(string dialog)
         {
-            this.text = text;
+            this.dialog = dialog;
             _nextIndex = 0;
         }
 
@@ -62,18 +61,18 @@ namespace KirikiriTalk
         /// <returns></returns>
         public bool TryToNext()
         {
-            if (_nextIndex >= text.Length)
+            if (_nextIndex >= dialog.Length)
             {
                 return false;
             }
             //判斷是否為指令
-            if (text[_nextIndex] != '[')
+            if (dialog[_nextIndex] != '[')
             {
-                _currentChar = text[_nextIndex].ToString();
+                _currentChar = dialog[_nextIndex].ToString();
                 _nextIndex++;
                 _isFunction = false;
             }
-            else if (text[_nextIndex + 1] == '[')
+            else if (dialog[_nextIndex + 1] == '[')
             {//判斷指令是否為表示字元'['
                 _nextIndex += 2;
                 _currentChar = '['.ToString();
@@ -83,24 +82,24 @@ namespace KirikiriTalk
             {//找出指令長度
 
                 int length = 1;
-                while (!text[_nextIndex + length].Equals(']')
+                while (!dialog[_nextIndex + length].Equals(']')
                     && length <= 1000
-                    && _nextIndex + length < text.Length)
+                    && _nextIndex + length < dialog.Length)
                 {
                     length++;
                 }
-                if (length > 1000 || _nextIndex + length >= text.Length)
+                if (length > 1000 || _nextIndex + length >= dialog.Length)
                 {
                     Debug.Log("\\後指令後找不到空白鍵中斷點");
                     return false;
                 }
                 else
                 {
-                    DialogUnit breakSymbol = new DialogUnit(text.Substring(_nextIndex, length + 1), text.Substring(_nextIndex + 1, length - 1), ",", "=");
+                    DialogUnit breakSymbol = new DialogUnit(dialog.Substring(_nextIndex, length + 1), dialog.Substring(_nextIndex + 1, length - 1), ",", "=");
 
                     _nextIndex += length + 1;
                     _currentDialogUnit = breakSymbol;
-                    _currentDialogUnit.SpilitBreakSymbol(",","=");
+                    _currentDialogUnit.ConvertToToken(",","=");
                     _isFunction = true;
                 }
             }

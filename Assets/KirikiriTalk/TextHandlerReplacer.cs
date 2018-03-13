@@ -27,7 +27,7 @@ namespace KirikiriTalk
 
         protected override void Parse(KirikiriController ctrl, DialogUnit dialogUnit)
         {
-            ctrl.dialogCtrl.text = ctrl.dialogCtrl.text.Replace(dialogUnit.stringWithBrackets, newString);
+            ctrl.dialogCtrl.dialog = ctrl.dialogCtrl.dialog.Replace(dialogUnit.stringWithBrackets, newString);
         }
     }
 

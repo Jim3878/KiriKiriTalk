@@ -11,7 +11,7 @@ namespace KirikiriTalk
         protected override bool IsMatch(DialogUnit order)
         {
             return 
-                order.HasToken("wait", KirikiriTalk.Parser.DataType.FLOAT) || order.HasToken("wait", KirikiriTalk.Parser.DataType.INT);
+                order.HasToken("wait", KirikiriTalk.Parser.VariableType.FLOAT) || order.HasToken("wait", KirikiriTalk.Parser.VariableType.INT);
         }
 
         protected override void Parse(KirikiriController ctrl, DialogUnit order)

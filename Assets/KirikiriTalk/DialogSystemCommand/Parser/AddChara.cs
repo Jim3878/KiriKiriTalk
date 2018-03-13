@@ -32,10 +32,10 @@ namespace KirikiriTalk
         protected override bool IsMatch(DialogUnit order)
         {
             return order.IsHeaderEqualTo("setChara") &&
-                order.HasToken("to",DataType.STRING)&&
-                order.HasToken("from",DataType.STRING)&&
-                (order.HasToken("duration",DataType.FLOAT) 
-                || order.HasToken("duration",DataType.INT));
+                order.HasToken("to",VariableType.STRING)&&
+                order.HasToken("from",VariableType.STRING)&&
+                (order.HasToken("duration",VariableType.FLOAT) 
+                || order.HasToken("duration",VariableType.INT));
         }
 
         protected override void Parse(KirikiriController ctrl, DialogUnit order)

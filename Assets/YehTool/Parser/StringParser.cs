@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace KirikiriTalk.Parser
 {
-    public enum DataType
+    public enum VariableType
     {
         INT,
         FLOAT,
@@ -27,21 +27,21 @@ namespace KirikiriTalk.Parser
             return System.Enum.Parse(type, s);
         }
         
-        public static bool FailParser(string data, out DataType dataType, out object value)
+        public static bool FailParser(string data, out VariableType dataType, out object value)
         {
-            dataType = default(DataType);
+            dataType = default(VariableType);
             value = default(object);
             Debug.LogError(string.Format("錯誤數值 :{0}", data));
             return false;
         }
 
-        public static bool TryParser(this string data, out DataType dataType, out object value)
+        public static bool TryParser(this string data, out VariableType dataType, out object value)
         {
             if (data[0] == '\"')
             {
                 if (data[data.Length - 1] == '\"')
                 {
-                    dataType = DataType.STRING;
+                    dataType = VariableType.STRING;
                     value = data.Substring(1, data.Length - 2);
                     return true;
                 }
@@ -52,7 +52,7 @@ namespace KirikiriTalk.Parser
             }
             else if (data[data.Length - 1] == 'f')
             {
-                dataType = DataType.FLOAT;
+                dataType = VariableType.FLOAT;
                 float temp;
                 if (!float.TryParse(data.Substring(0, data.Length - 1), out temp))
                 {
@@ -60,7 +60,7 @@ namespace KirikiriTalk.Parser
                 }
                 else
                 {
-                    dataType = DataType.FLOAT;
+                    dataType = VariableType.FLOAT;
                     value = temp;
                     return true;
                 }
@@ -75,11 +75,11 @@ namespace KirikiriTalk.Parser
                     {
                         return FailParser(data, out dataType, out value);
                     }
-                    dataType = DataType.INT;
+                    dataType = VariableType.INT;
                     value = tempInt;
                     return true;
                 }
-                dataType = DataType.FLOAT;
+                dataType = VariableType.FLOAT;
                 value = tempFloat;
                 return true;
             }
