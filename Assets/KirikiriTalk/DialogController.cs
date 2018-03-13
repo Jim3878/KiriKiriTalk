@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Yeh.Parser;
+using KirikiriTalk.Parser;
 namespace KirikiriTalk
 {
-
-
-    public class DialogTextHandler
+    public class DialogController
     {
-
         public string text;
 
         int _nextIndex;
@@ -34,8 +31,9 @@ namespace KirikiriTalk
             }
         }
 
-        BreakOrder _breakSymbol;
-        public BreakOrder breakOrder
+        DialogUnit _currentDialogUnit;
+
+        public DialogUnit currentDialogUnit
         {
             get
             {
@@ -43,11 +41,11 @@ namespace KirikiriTalk
                 {
                     return null;
                 }
-                return _breakSymbol;
+                return _currentDialogUnit;
             }
         }
 
-        public DialogTextHandler(string text)
+        public DialogController(string text)
         {
             this.text = text;
             _nextIndex = 0;
@@ -98,11 +96,11 @@ namespace KirikiriTalk
                 }
                 else
                 {
-                    BreakOrder breakSymbol = new BreakOrder(text.Substring(_nextIndex, length + 1), text.Substring(_nextIndex + 1, length - 1), ",", "=");
+                    DialogUnit breakSymbol = new DialogUnit(text.Substring(_nextIndex, length + 1), text.Substring(_nextIndex + 1, length - 1), ",", "=");
 
                     _nextIndex += length + 1;
-                    _breakSymbol = breakSymbol;
-                    _breakSymbol.SpilitBreakSymbol(",","=");
+                    _currentDialogUnit = breakSymbol;
+                    _currentDialogUnit.SpilitBreakSymbol(",","=");
                     _isFunction = true;
                 }
             }

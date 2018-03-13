@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224023197765987040}
   m_Layer: 5
-  m_Name: Right
+  m_Name: RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224453610375550678}
   m_Layer: 5
-  m_Name: LeftLeft
+  m_Name: LEFT_LEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224593227822958542}
   m_Layer: 5
-  m_Name: LeftDown
+  m_Name: LEFT_DOWN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224121248914636430}
   m_Layer: 5
-  m_Name: RightRight
+  m_Name: RIGHT_RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224703647969369518}
   m_Layer: 5
-  m_Name: Midle
+  m_Name: MIDLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224587370668067948}
   m_Layer: 5
-  m_Name: Left
+  m_Name: LEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224535679687466804}
   m_Layer: 5
-  m_Name: MidleDown
+  m_Name: MIDLE_DOWN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224779904991013374}
   m_Layer: 5
-  m_Name: RightDown
+  m_Name: RIGHT_DOWN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,7 +428,8 @@ MonoBehaviour:
   WaitingSymbol: {fileID: 224798129291339436}
   CharaPosition: {fileID: 224754089967476630}
   isDisplayDialog: 0
-  delayPerChar: 0
+  charDelay: 0
+  charDelayRatio: 1
   defaultFontSize: 0
   defaultFontColor: {r: 0, g: 0, b: 0, a: 0}
   time: 0

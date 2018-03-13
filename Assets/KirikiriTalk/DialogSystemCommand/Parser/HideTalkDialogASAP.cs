@@ -7,12 +7,12 @@ namespace KirikiriTalk
 {
     public class HideTalkDialogASAP : KiriParser
     {
-        protected override bool IsMatch(BreakOrder order)
+        protected override bool IsMatch(DialogUnit order)
         {
-            return order.IsTitle("HideS");
+            return order.IsHeaderEqualTo("HideS");
         }
 
-        protected override void Parse(KirikiriController ctrl, BreakOrder order)
+        protected override void Parse(KirikiriController ctrl, DialogUnit order)
         {
             ctrl.talkBody.localScale = Vector3.zero;
             

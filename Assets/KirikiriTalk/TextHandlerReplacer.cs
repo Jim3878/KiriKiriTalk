@@ -8,7 +8,7 @@ namespace KirikiriTalk
 
     public class ReplaceParser : KiriParser
     {
-        BreakOrder order;
+        DialogUnit dialogUnit;
 
         string orderTitle;
         string newString;
@@ -19,15 +19,15 @@ namespace KirikiriTalk
             this.newString = newString;
         }
 
-        protected override bool IsMatch(BreakOrder order)
+        protected override bool IsMatch(DialogUnit dialogUnit)
         {
-            this.order = order;
-            return order.title == orderTitle.ToLower();
+            this.dialogUnit = dialogUnit;
+            return dialogUnit.header == orderTitle.ToLower();
         }
 
-        protected override void Parse(KirikiriController ctrl, BreakOrder order)
+        protected override void Parse(KirikiriController ctrl, DialogUnit dialogUnit)
         {
-            ctrl.textHandler.text = ctrl.textHandler.text.Replace(order.stringWithBrackets, newString);
+            ctrl.dialogCtrl.text = ctrl.dialogCtrl.text.Replace(dialogUnit.stringWithBrackets, newString);
         }
     }
 
@@ -44,23 +44,23 @@ namespace KirikiriTalk
 
         public void Excute(KirikiriController flow)
         {
-            List<BreakOrder> temp = new List<BreakOrder>();
-            while (flow.textHandler.TryToNext())
+            List<DialogUnit> temp = new List<DialogUnit>();
+            while (flow.dialogCtrl.TryToNext())
             {
-                if (flow.textHandler.isFunction)
+                if (flow.dialogCtrl.isFunction)
                 {
-                    temp.Add(flow.textHandler.breakOrder);
+                    temp.Add(flow.dialogCtrl.currentDialogUnit);
                 }
             }
-            foreach (var order in temp)
+            foreach (var dialogUnit in temp)
             {
-                ReplaceParser rp = replacerList.Find((x) => x.IsMyCase(order));
+                ReplaceParser rp = replacerList.Find((x) => x.IsMyCase(dialogUnit));
                 if (rp != null)
                 {
                     flow.SetCommand(rp);
                 }
             }
-            flow.textHandler.Reset();
+            flow.dialogCtrl.Reset();
 
         }
     }

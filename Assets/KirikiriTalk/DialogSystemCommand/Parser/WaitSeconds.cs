@@ -8,13 +8,13 @@ namespace KirikiriTalk
 {
     public class WaitSeconds : KiriParser
     {
-        protected override bool IsMatch(BreakOrder order)
+        protected override bool IsMatch(DialogUnit order)
         {
             return 
-                order.HasToken("wait", Yeh.Parser.DataType.FLOAT) || order.HasToken("wait", Yeh.Parser.DataType.INT);
+                order.HasToken("wait", KirikiriTalk.Parser.DataType.FLOAT) || order.HasToken("wait", KirikiriTalk.Parser.DataType.INT);
         }
 
-        protected override void Parse(KirikiriController ctrl, BreakOrder order)
+        protected override void Parse(KirikiriController ctrl, DialogUnit order)
         {
             ctrl.time += order.GetTokenFloatValueByName("wait");
         }

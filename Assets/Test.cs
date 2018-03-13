@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Yeh.Parser;
+using KirikiriTalk.Parser;
 namespace KirikiriTalk
 {
     public class Test : MonoBehaviour
@@ -13,40 +13,37 @@ namespace KirikiriTalk
         {
             Debug.Log(Color.red.ToHex());
 
-
-            string text = @"[hides][wait=0.5][setChara,name=""Leading"",file=""chara"",from=""LeftLeft"",to=""Left"",duration=0.5f][wait=0.5f][show]
-[UserName][username][USERNAME]UserName在用55555555\\加上雙引號()[waitClick]即可";
+            
+            string text = @"[hides][wait=0.5][wait=0.5f][show][setChara, name=""Leading"", file=""chara"", from=""Left_Left"", to=""Left"", duration=0.5f]
+[UserName][username][USERNAME]UserNaddddddddddddddddddddddddddddddddddddddddme在用55555555\\加上雙引號()[waitClick][clear]即可[waitClick]";
             manager = KirikiriController.Instance();
 
 
             manager.AddParser(
-                new AddCharaCommand(),
+                new AddChara(),
                 new ShowTalkDialog(),
                 new HideTalkDialog(),
                 new WaitSeconds(),
                 new HideTalkDialogASAP(),
-                new WaitClick()
+                new WaitClick(),
+                new ClearDialog()
                 );
 
-            manager.SetDialogString(text.Replace("\n",""));
+            manager.SetDialogString(text.Replace("\n", ""));
             manager.SetCommand(new TextHandlerReplacHandler(new ReplaceParser("UserName", "主人公")));
-            manager.delayPerChar = 0.1f;
+            manager.SetCommand(new ShowDialogImmediatelyCommand());
+            manager.charDelay = 0.1f;
             //manager.SetCommand(new ZoomInOnStartCommand());
             manager.Play();
 
-            Yeh.InputEvent.onMouseUp += OnMouseDown;
-            
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
+            InputInvoker.instance.mouseEvent += OnMouseDown;
+            InputInvoker.instance.keyEvent += OnMouseDown;
 
         }
 
-        private void OnMouseDown(object sender, Yeh.MouseClickEvnetArgs e)
+        private void OnMouseDown(InputInvoker.clickTypeEnum clickType, KeyCode code)
         {
-            Debug.Log(e.button);
+            //Debug.Log(string.Format("clickTpe={0} , keycode={1}", clickType, code));
         }
     }
 }

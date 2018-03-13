@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Yeh.Parser
+namespace KirikiriTalk.Parser
 {
     public enum DataType
     {

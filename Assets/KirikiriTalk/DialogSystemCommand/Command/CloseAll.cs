@@ -13,7 +13,7 @@ namespace KirikiriTalk
             ctrl.talkBody.DOScale(0, 0.5f);
             for(int i = 0; i < ctrl.CharaLayer.childCount; i++)
             {
-                ctrl.CharaLayer.GetChild(i).DOMove(ctrl.GetCharaPosition(CharaPosition.LeftLeft).position, 0.5f);
+                ctrl.CharaLayer.GetChild(i).DOMove(ctrl.GetCharaPosition(CharaPosition.LEFT_LEFT).position, 0.5f);
             }
         }
     }

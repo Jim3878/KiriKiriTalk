@@ -8,7 +8,7 @@ namespace KirikiriTalk
     public abstract class KiriParser : IKirikiriCommand
     {
         bool isMatch=false;
-        BreakOrder order;
+        DialogUnit order;
         public void Excute(KirikiriController ctrl)
         {
             if (isMatch)
@@ -20,16 +20,16 @@ namespace KirikiriTalk
             }
         }
 
-        protected abstract void Parse(KirikiriController ctrl,BreakOrder order);
+        protected abstract void Parse(KirikiriController ctrl,DialogUnit order);
 
-        protected abstract bool IsMatch(BreakOrder order);
+        protected abstract bool IsMatch(DialogUnit order);
 
         protected bool IsMatch(string tokenName)
         {
             return order.GetTokenByName(tokenName) != null;
         }
 
-        public bool IsMyCase(BreakOrder order)
+        public bool IsMyCase(DialogUnit order)
         {
             this.order = order;
             if (IsMatch(order))

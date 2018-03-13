@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Yeh.Parser;
+using KirikiriTalk.Parser;
 
 namespace KirikiriTalk
 {
@@ -25,16 +25,15 @@ namespace KirikiriTalk
             value.TryParser(out dataType, out this.value);
         }
     }
-    public class BreakOrder
+    public class DialogUnit
     {
-        
         public string stringWithBrackets;
-        public string allString;
-        public string title
+        public string wholeString;
+        public string header
         {
             get
             {
-                return allString.Replace(" ", "").Split(',')[0].ToLower();
+                return wholeString.Replace(" ", "").Split(',')[0].ToLower();
             }
         }
 
@@ -43,26 +42,24 @@ namespace KirikiriTalk
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="origString">原字串</param>
+        /// <param name="wholeString">原字串</param>
         /// <param name="splitSymbol">分隔字元</param>
         /// <param name="operaters">可用的運算元</param>
-        public BreakOrder(string stringWithBrackets, string allString, string splitSymbol, params string[] operaters)
+        public DialogUnit(string stringWithBrackets, string wholeString, string splitSymbol, params string[] operaters)
         {
             this.stringWithBrackets = stringWithBrackets;
-            this.allString = allString;
+            this.wholeString = wholeString;
             this.SpilitBreakSymbol(splitSymbol, operaters);
         }
 
-        public bool IsTitle(string title)
+        public bool IsHeaderEqualTo(string header)
         {
-            return this.title == title.ToLower();
+            return this.header == header.ToLower();
         }
-
-
 
         public void SpilitBreakSymbol(string splitSymbol, params string[] operaters)
         {
-            List<string> unSpilitTokenList = new List<string>(allString.Replace(" ","").Split(new string[] { splitSymbol }, System.StringSplitOptions.None));
+            List<string> unSpilitTokenList = new List<string>(wholeString.Replace(" ","").Split(new string[] { splitSymbol }, System.StringSplitOptions.None));
             string[] spilitToken;
             tokenList = new List<Token>();
             bool hasOperater = false;
@@ -92,32 +89,32 @@ namespace KirikiriTalk
 
     public static class BreakOrderGetter
     {
-        public static Token GetTokenByName(this BreakOrder order, string tokenName)
+        public static Token GetTokenByName(this DialogUnit order, string tokenName)
         {
             return order.tokenList.Find((x) => x.name == tokenName);
         }
 
-        public static int GetTokenIntValueByName(this BreakOrder order, string tokenName)
+        public static int GetTokenIntValueByName(this DialogUnit order, string tokenName)
         {
             return (int)order.tokenList.Find((x) => x.name == tokenName).value;
         }
 
-        public static float GetTokenFloatValueByName(this BreakOrder order, string tokenName)
+        public static float GetTokenFloatValueByName(this DialogUnit order, string tokenName)
         {
             return (float)order.tokenList.Find((x) => x.name == tokenName).value;
         }
 
-        public static string GetTokenStringValueByName(this BreakOrder order, string tokenName)
+        public static string GetTokenStringValueByName(this DialogUnit order, string tokenName)
         {
             return (string)order.tokenList.Find((x) => x.name == tokenName).value;
         }
 
-        public static bool HasToken(this BreakOrder order, string tokenName)
+        public static bool HasToken(this DialogUnit order, string tokenName)
         {
             return order.GetTokenByName(tokenName) != null;
         }
 
-        public static bool HasToken(this BreakOrder order, string tokenName, DataType dataType)
+        public static bool HasToken(this DialogUnit order, string tokenName, DataType dataType)
         {
             return order.HasToken(tokenName) && order.GetTokenByName(tokenName).dataType == dataType;
         }

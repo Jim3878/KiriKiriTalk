@@ -7,12 +7,12 @@ using DG.Tweening;
 namespace KirikiriTalk {
     public class ShowTalkDialog :  KiriParser{
 
-        protected override bool IsMatch(BreakOrder order)
+        protected override bool IsMatch(DialogUnit order)
         {
-            return order.IsTitle("Show");
+            return order.IsHeaderEqualTo("Show");
         }
 
-        protected override void Parse(KirikiriController ctrl, BreakOrder order)
+        protected override void Parse(KirikiriController ctrl, DialogUnit order)
         {
             ctrl.talkBody.DOScale(1, 0.5f);
                 

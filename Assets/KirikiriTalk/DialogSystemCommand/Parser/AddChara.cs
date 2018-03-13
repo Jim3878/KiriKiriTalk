@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Yeh.Parser;
+using KirikiriTalk.Parser;
 
 namespace KirikiriTalk
 {
-    public class AddCharaCommand : KiriParser
+    public class AddChara : KiriParser
     {
         Vector3 from, to;
         Sprite sprite;
@@ -15,30 +15,30 @@ namespace KirikiriTalk
         float duration;
 
 
-        public AddCharaCommand SetPath(Vector3 from, Vector3 to, float duration)
+        public AddChara SetPath(Vector3 from, Vector3 to, float duration)
         {
             this.from = from;
             this.to = to;
             this.duration = duration;
             return this;
         }
-        public AddCharaCommand SetPath(Vector3 to, float duration)
+        public AddChara SetPath(Vector3 to, float duration)
         {
             this.from = Vector3.zero;
             this.to = to;
             this.duration = duration;
             return this;
         }
-        protected override bool IsMatch(BreakOrder order)
+        protected override bool IsMatch(DialogUnit order)
         {
-            return order.IsTitle("setChara") &&
+            return order.IsHeaderEqualTo("setChara") &&
                 order.HasToken("to",DataType.STRING)&&
                 order.HasToken("from",DataType.STRING)&&
                 (order.HasToken("duration",DataType.FLOAT) 
                 || order.HasToken("duration",DataType.INT));
         }
 
-        protected override void Parse(KirikiriController ctrl, BreakOrder order)
+        protected override void Parse(KirikiriController ctrl, DialogUnit order)
         {
             
             CharaPosition fromToken 

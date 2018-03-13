@@ -3,40 +3,36 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using KirikiriTalk.Event;
 
 namespace KirikiriTalk
 {
-    public class CommandEventArgs : EventArgs
-    {
-        public IKirikiriCommand command;
-        public CommandEventArgs(IKirikiriCommand command)
-        {
-            this.command = command;
-        }
-    }
 
     public enum CharaPosition
     {
-        Left,
-        Right,
-        Middle,
-        LeftLeft,
-        RightRight,
-        LeftDown,
-        RightDown,
-        MiddleDown,
+        LEFT,
+        RIGHT,
+        MIDDLE,
+        LEFT_LEFT,
+        RIGHT_RIGHT,
+        LEFT_DOWN,
+        RIGHT_DOWN,
+        MIDDLE_DOWN,
     }
 
     public class KirikiriController : MonoBehaviour
     {
-        
+        #region Instance
+        static string prefabsPath = "KirikiriTalk";
         public static CharaPosition CharaPositionParser(string s)
         {
-            return (CharaPosition)Enum.Parse(typeof(CharaPosition),s);
+            return (CharaPosition)Enum.Parse(typeof(CharaPosition), s.ToUpper());
         }
+        #endregion
 
-        static string prefabsPath = "KirikiriTalk";
+        #region VARIABLE
 
+        #endregion
 
         [SerializeField]
         public Canvas canvas;
@@ -57,17 +53,17 @@ namespace KirikiriTalk
         [SerializeField]
         public Transform CharaPosition;
         public bool isDisplayDialog;
-        public float delayPerChar;
+        public float charDelay;
+        public float charDelayRatio = 1;
         public int defaultFontSize;
         public Color defaultFontColor;
 
-        
-
         [HideInInspector]
-        public DialogTextHandler textHandler;
+        public DialogController dialogCtrl;
         [HideInInspector]
         public float time;
-        bool isPause;
+        public bool isPause { get { return _isPause; } }
+        bool _isPause;
 
         List<DialogDecorator> dialogDecoratorList;
         List<KiriParser> dialogParserList;
@@ -110,11 +106,10 @@ namespace KirikiriTalk
             canvas.sortingOrder = sortingOrder;
             isDisplayDialog = false;
         }
-        
 
         public void SetDialogString(string text)
         {
-            this.textHandler = new DialogTextHandler(text);
+            this.dialogCtrl = new DialogController(text);
         }
 
         public CharaBoard GetCharaBoardByName(String name)
@@ -143,43 +138,54 @@ namespace KirikiriTalk
             {
                 onDialogStart(this, new EventArgs());
             }
-            textHandler.Reset();
+            dialogCtrl.Reset();
             dialogText.text = "";
-            isPause = false;
+            _isPause = false;
             isDisplayDialog = true;
             time = 0;
             HandleNext();
         }
-        
+
 
         public void Pause()
         {
-            isPause = true;
+            _isPause = true;
         }
         public void Continue()
         {
-            isPause = false;
+            _isPause = false;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (isDisplayDialog && !isPause)
+            if (isDisplayDialog && !_isPause)
             {
-                if (Yeh.Tool.Tools.CheckPerDeltaTime(ref time, delayPerChar))
+                if (charDelay * charDelayRatio > 0)
                 {
-                    HandleNext();
+                    if (KirikiriTalk.Tool.Tools.CheckPerDeltaTime(ref time, charDelay * charDelayRatio))
+                    {
+                        HandleNext();
+                    }
+                }
+                else
+                {
+                    while (isDisplayDialog && !_isPause && charDelay * charDelayRatio <= 0)
+                    {
+                        HandleNext();
+                    }
                 }
             }
         }
 
         void HandleNext()
         {
-            if (textHandler.TryToNext())
+
+            if (dialogCtrl.TryToNext())
             {
-                if (!textHandler.isFunction)
+                if (!dialogCtrl.isFunction)
                 {
-                    this.nextChar = textHandler.currentChar;
+                    this.nextChar = dialogCtrl.currentChar;
                     if (beforeDialogPrint != null)
                         beforeDialogPrint(this, new EventArgs());
                     UpdatTextDialog();
@@ -188,14 +194,15 @@ namespace KirikiriTalk
                 }
                 else
                 {
-                    this.FunctionParser(textHandler.breakOrder);
+                    this.FunctionParser(dialogCtrl.currentDialogUnit);
                     ToNextImmediately();
                 }
+
             }
             else
             {
                 isDisplayDialog = false;
-                
+
                 if (onDialogComplete != null)
                 {
                     onDialogComplete(this, new EventArgs());
@@ -206,20 +213,20 @@ namespace KirikiriTalk
 
         public void ToNextImmediately()
         {
-            time -= delayPerChar;
+            time -= charDelay * charDelayRatio;
         }
 
         void UpdatTextDialog()
         {
             dialogText.text += this.nextChar;
         }
-        
 
-        void FunctionParser(BreakOrder order)
+
+        void FunctionParser(DialogUnit order)
         {
             if (onPrintBreakOrder != null)
                 onPrintBreakOrder(this, new BreakOrderEventArgs(order));
-            bool isFoundCase=false;
+            bool isFoundCase = false;
             if (dialogParserList == null)
             {
                 dialogParserList = new List<KiriParser>();
@@ -235,7 +242,7 @@ namespace KirikiriTalk
             }
             if (!isFoundCase)
             {
-                Debug.LogError("錯誤的指令 : " + order.allString);
+                Debug.LogError("錯誤的指令 : " + order.wholeString);
             }
             //Debug.Log(order.title);
         }

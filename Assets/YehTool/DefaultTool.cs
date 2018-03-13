@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Yeh.Tool
+namespace KirikiriTalk.Tool
 {
     public class IntPass : UnityEvent<int> { }
 
