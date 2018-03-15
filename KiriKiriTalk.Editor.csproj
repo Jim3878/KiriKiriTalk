@@ -130,6 +130,9 @@
     <Reference Include="DOTweenEditor">
       <HintPath>Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>Assets/KirikiriTalk/KiriKiriTalk2.0/Test/Editor/NSubstitute.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="KiriKiriTalk.csproj">
@@ -138,9 +141,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Editor\ColorHexTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Editor\DialogManagerTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Editor\StringTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\ColorHexTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogManagerTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogUnitTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\StringTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />

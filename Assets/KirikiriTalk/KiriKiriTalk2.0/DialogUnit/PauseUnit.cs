@@ -3,10 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseUnit : BaseDialogUnit
+public class PauseUnit : IDialogUnit
 {
-    public override void Excute(KiriKiriTalk kirikiriTalke)
+    public void Complete(KiriTalk talk)
     {
-        kirikiriTalke.isPause = true;
+        
     }
+
+    public void Excute(KiriTalk talk)
+    {
+        talk.TransTo(new PauseState(talk));
+    }
+    
 }

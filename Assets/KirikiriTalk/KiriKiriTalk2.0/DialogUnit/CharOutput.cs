@@ -12,7 +12,12 @@ public class CharOutput : IDialogUnit
         this.dialog = dialog;
     }
 
-    public void Excute(KiriKiriTalk kirikiriTalke)
+    public void Complete(KiriTalk talk)
+    {
+        
+    }
+
+    public void Excute(KiriTalk kirikiriTalke)
     {
         kirikiriTalke.AddDialog(dialog);
     }

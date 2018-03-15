@@ -120,9 +120,14 @@
     <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\baseClass\BaseDialogUnitFactory.cs" />
     <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\baseClass\IDialogUnit.cs" />
     <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\DialogUnit\baseClass\IDialogUnitFactory.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriKiriTalk.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriLSM\Core\BaseKiriState.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriLSM\Core\KiriStateController.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriLSM\NormalState.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriLSM\PauseState.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriLSM\SkipState.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\KiriTalk.cs" />
     <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\LSMKiriTest.cs" />
     <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\TextStyle.cs" />
     <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Utility\KiriKiriTalkUtility.cs" />
     <Compile Include="Assets\KirikiriTalk\KirikiriController.cs" />

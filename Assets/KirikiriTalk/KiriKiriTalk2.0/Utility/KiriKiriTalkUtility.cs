@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
 
-public static class KiriKiriTalkUtility
+public static class KiriTalkUtility
 {
     public static string ToHex(this Color color)
     {
@@ -40,6 +41,14 @@ public static class KiriKiriTalkUtility
     public static bool StringIsVector3(string text)
     {
         return Regex.IsMatch(text, @"^\((\+?|-?)\d+(\.\d+)?,(\+?|-?)\d+(\.\d+)?,(\+?|-?)\d+(\.\d+)?\)$");
+    }
+
+    public static string CallStack()
+    {
+        // 1:省略目前位置
+        // true:顯示檔案資訊
+        var stackTrace = new StackTrace(1, true);
+        return stackTrace.ToString();
     }
 
     public static Vector2 ToVector2(string text)

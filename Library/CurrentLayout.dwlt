@@ -13,15 +13,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1395
-    y: 112
-    width: 487
-    height: 600
-  m_ShowMode: 0
+    x: 0
+    y: 42
+    width: 1440
+    height: 818
+  m_ShowMode: 4
   m_Title: 
-  m_RootView: {fileID: 4}
-  m_MinSize: {x: 100, y: 122}
-  m_MaxSize: {x: 4000, y: 4022}
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 950, y: 542}
+  m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -30,20 +30,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PixelRect:
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 3}
+  m_Position:
     serializedVersion: 2
     x: 0
-    y: 42
+    y: 30
     width: 1440
-    height: 818
-  m_ShowMode: 4
-  m_Title: 
-  m_RootView: {fileID: 9}
-  m_MinSize: {x: 950, y: 371}
-  m_MaxSize: {x: 10000, y: 10000}
+    height: 768
+  m_MinSize: {x: 681, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
+  vertical: 0
+  controlID: 138
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -58,15 +60,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
+    x: 937
     y: 0
-    width: 487
-    height: 600
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
+    width: 503
+    height: 768
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 15}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &4
@@ -77,78 +79,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 3}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 487
-    height: 600
-  m_MinSize: {x: 100, y: 122}
-  m_MaxSize: {x: 4000, y: 4022}
-  vertical: 0
-  controlID: 9
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 12}
-  - {fileID: 6}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-    width: 1440
-    height: 768
-  m_MinSize: {x: 881, y: 321}
-  m_MaxSize: {x: 10054, y: 8021}
-  vertical: 0
-  controlID: 138
---- !u!114 &6
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 1148
-    y: 0
-    width: 292
-    height: 768
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
-  m_Panes:
-  - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &7
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -157,16 +87,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 284
+    width: 233
     height: 465
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 19}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &8
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -182,17 +112,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 465
-    width: 1148
+    width: 937
     height: 303
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 13}
   m_Panes:
-  - {fileID: 17}
-  - {fileID: 22}
-  m_Selected: 1
-  m_LastSelected: 0
---- !u!114 &9
+  - {fileID: 13}
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -204,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 10}
-  - {fileID: 5}
-  - {fileID: 11}
+  - {fileID: 7}
+  - {fileID: 2}
+  - {fileID: 8}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -215,7 +145,7 @@ MonoBehaviour:
     height: 818
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
---- !u!114 &10
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -236,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &11
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -256,7 +186,7 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &12
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -268,19 +198,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 13}
-  - {fileID: 8}
+  - {fileID: 10}
+  - {fileID: 5}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1148
+    width: 937
     height: 768
-  m_MinSize: {x: 604, y: 321}
-  m_MaxSize: {x: 6052, y: 8021}
+  m_MinSize: {x: 404, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 105
---- !u!114 &13
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -292,19 +222,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 7}
-  - {fileID: 14}
+  - {fileID: 4}
+  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1148
+    width: 937
     height: 465
-  m_MinSize: {x: 604, y: 200}
-  m_MaxSize: {x: 6052, y: 4000}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 98
---- !u!114 &14
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -318,355 +248,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 284
+    x: 233
     y: 0
-    width: 864
+    width: 704
     height: 465
-  m_MinSize: {x: 404, y: 121}
-  m_MaxSize: {x: 2052, y: 2069}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 20}
-  - {fileID: 21}
   - {fileID: 16}
-  m_Selected: 2
-  m_LastSelected: 1
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AutoRepaintOnSceneChange: 0
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Test Runner
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_DepthBufferBits: 0
-  m_Pos:
-    serializedVersion: 2
-    x: 1395
-    y: 134
-    width: 487
-    height: 578
-  m_IsSceneBased: 0
-  m_TestTypeToolbarIndex: 0
-  m_PlayModeTestListGUI:
-    m_Window: {fileID: 15}
-    newResultList:
-    - id: '[DialogSample]'
-      name: DialogSample
-      fullName: DialogSample
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp.dll]'
-      name: Assembly-CSharp.dll
-      fullName: D:/GitUnity/KiriKiriTalk/Library/ScriptAssemblies/Assembly-CSharp.dll
-      resultStatus: 1
-      duration: 2.0998504
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp.dll][KiriTest]'
-      name: KiriTest
-      fullName: KiriTest
-      resultStatus: 1
-      duration: 2.0835655
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp.dll][KiriTest][DefaultDialogUnitPasses]'
-      name: DefaultDialogUnitPasses
-      fullName: KiriTest.DefaultDialogUnitPasses
-      resultStatus: 1
-      duration: 2.0456312
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp.dll][KiriTest][PausePassesPasses]'
-      name: PausePassesPasses
-      fullName: KiriTest.PausePassesPasses
-      resultStatus: 1
-      duration: 3.0559185
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    m_ResultText: DefaultDialogUnitPasses (2.046s)
-    m_ResultStacktrace: 
-    m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ad667b48
-      m_LastClickedID: 1216046765
-      m_ExpandedIDs: cb3138899f8011daf0b4c92dc4e8f451ffffff7f
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-  m_EditModeTestListGUI:
-    m_Window: {fileID: 15}
-    newResultList:
-    - id: '[DialogSample]'
-      name: DialogSample
-      fullName: DialogSample
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll]'
-      name: Assembly-CSharp-Editor.dll
-      fullName: D:/GitUnity/KiriKiriTalk/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-      resultStatus: 2
-      duration: 0.2779198
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][ColorHexText]'
-      name: ColorHexText
-      fullName: ColorHexText
-      resultStatus: 1
-      duration: 0.0599652
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][ColorHexText][ColorHexTextSimplePasses]'
-      name: ColorHexTextSimplePasses
-      fullName: ColorHexText.ColorHexTextSimplePasses
-      resultStatus: 1
-      duration: 0.0192521
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][ColorHexText][ColorHexTextWithEnumeratorPasses]'
-      name: ColorHexTextWithEnumeratorPasses
-      fullName: ColorHexText.ColorHexTextWithEnumeratorPasses
-      resultStatus: 1
-      duration: 0.0074588
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][DialogManagerTest]'
-      name: DialogManagerTest
-      fullName: DialogManagerTest
-      resultStatus: 2
-      duration: 0.0694877
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][DialogManagerTest][DefaultDialogUnitPasses]'
-      name: DefaultDialogUnitPasses
-      fullName: DialogManagerTest.DefaultDialogUnitPasses
-      resultStatus: 1
-      duration: 0.0140411
-      messages: 
-      output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
-        is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively,
-        your script can inherit from ScriptableObject or no base class at all\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][DialogManagerTest][PausePasses]'
-      name: PausePasses
-      fullName: DialogManagerTest.PausePasses
-      resultStatus: 1
-      duration: 0.0032707
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][DialogManagerTest][PausePassesPasses]'
-      name: PausePassesPasses
-      fullName: DialogManagerTest.PausePassesPasses
-      resultStatus: 2
-      duration: 0.0226136
-      messages: "  Expected: True\r\n  But was:  False\r\n"
-      output: "EditMode test can only yield null\r\n"
-      stacktrace: "at DialogManagerTest+<PausePassesPasses>c__Iterator0.MoveNext ()
-        [0x000b1] in D:\\GitUnity\\KiriKiriTalk\\Assets\\KirikiriTalk\\KiriKiriTalk2.0\\Editor\\DialogManagerTest.cs:58\r\nat
-        UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator () [0x0005f]
-        in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest]'
-      name: StringTest
-      fullName: StringTest
-      resultStatus: 1
-      duration: 0.1163095
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest][FloatIsMachedPasses]'
-      name: FloatIsMachedPasses
-      fullName: StringTest.FloatIsMachedPasses
-      resultStatus: 1
-      duration: 0.0058243
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest][IntIsMachedPasses]'
-      name: IntIsMachedPasses
-      fullName: StringTest.IntIsMachedPasses
-      resultStatus: 1
-      duration: 0.0048391
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest][StringTestWithEnumeratorPasses]'
-      name: StringTestWithEnumeratorPasses
-      fullName: StringTest.StringTestWithEnumeratorPasses
-      resultStatus: 1
-      duration: 0.0095932
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest][Vector2IsMachedPasses]'
-      name: Vector2IsMachedPasses
-      fullName: StringTest.Vector2IsMachedPasses
-      resultStatus: 1
-      duration: 0.0042137
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest][Vector2ParserPasses]'
-      name: Vector2ParserPasses
-      fullName: StringTest.Vector2ParserPasses
-      resultStatus: 1
-      duration: 0.0045905
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest][Vector3IsMachedPasses]'
-      name: Vector3IsMachedPasses
-      fullName: StringTest.Vector3IsMachedPasses
-      resultStatus: 1
-      duration: 0.0046511
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[DialogSample][Assembly-CSharp-Editor.dll][StringTest][Vector3ParserPasses]'
-      name: Vector3ParserPasses
-      fullName: StringTest.Vector3ParserPasses
-      resultStatus: 1
-      duration: 0.0044084
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    m_ResultText: "PausePassesPasses (0.023s)\n---\nExpected: True\r\n  But was:  False\n---\nat
-      DialogManagerTest+<PausePassesPasses>c__Iterator0.MoveNext () [0x000b1] in D:\\GitUnity\\KiriKiriTalk\\Assets\\KirikiriTalk\\KiriKiriTalk2.0\\Editor\\DialogManagerTest.cs:58\r\nat
-      UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator () [0x0005f]
-      in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\n---\nEditMode
-      test can only yield null"
-    m_ResultStacktrace: "at DialogManagerTest+<PausePassesPasses>c__Iterator0.MoveNext
-      () [0x000b1] in D:\\GitUnity\\KiriKiriTalk\\Assets\\KirikiriTalk\\KiriKiriTalk2.0\\Editor\\DialogManagerTest.cs:58\r\nat
-      UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator () [0x0005f]
-      in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
-    m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b3d1c06b
-      m_LastClickedID: 1807798707
-      m_ExpandedIDs: 30d36e888d7159984f5c43cff0b4c92d51b2e867ffffff7f
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
---- !u!114 &16
+  - {fileID: 17}
+  - {fileID: 12}
+  m_Selected: 1
+  m_LastSelected: 2
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -692,7 +287,7 @@ MonoBehaviour:
     y: 91
     width: 860
     height: 444
---- !u!114 &17
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -716,7 +311,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 556
-    width: 1146
+    width: 935
     height: 282
   m_SearchFilter:
     m_NameFilter: 
@@ -729,19 +324,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/KirikiriTalk/KiriKiriTalk2.0/Editor
+    - Assets/KirikiriTalk/KiriKiriTalk2.0/Test/Editor
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/KirikiriTalk/KiriKiriTalk2.0/Editor
+  - Assets/KirikiriTalk/KiriKiriTalk2.0/Test/Editor
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\GitUnity\KiriKiriTalk
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 59}
-    m_SelectedIDs: 8e250000
-    m_LastClickedID: 9614
-    m_ExpandedIDs: 000000001625000088250000b4250000bc250000c025000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: a0250000
+    m_LastClickedID: 9632
+    m_ExpandedIDs: 00000000262500009a250000c6250000ce250000d22500006a27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -757,7 +352,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 8}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -769,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001625000088250000b4250000bc250000c0250000
+    m_ExpandedIDs: 00000000262500009a250000c6250000ce250000d2250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -794,26 +389,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f0060000
-    m_LastClickedInstanceID: 1776
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: NSubstitute
+      m_OriginalName: NSubstitute
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11250
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 8}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -824,7 +419,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_DirectoriesAreaWidth: 285
---- !u!114 &18
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -846,9 +441,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1150
+    x: 939
     y: 91
-    width: 290
+    width: 501
     height: 747
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -857,7 +452,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
---- !u!114 &19
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -881,13 +476,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 91
-    width: 282
+    width: 231
     height: 444
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f0060000
+    m_SelectedIDs: 36060000
     m_LastClickedID: 0
-    m_ExpandedIDs: 10caffff30caffff92ccffffe8cdffff08ceffff62d0ffff3ad5ffff5ad5ffffb6d7fffff2daffff12dbffff9eddffff96e2ffff0efaffffe6fbffff00000000
+    m_ExpandedIDs: b0fbfdffd2fffdff5801feff5605feff6c07feff6a0bfeffaa18feffc21cfeff821dfeff0422feff6427feff7e2bfeff462dfeff6631feffa832feff5836feff6237feff623bfeff703efeff9042feff9845feff8449feff224afeff0c4efeff7c4ffeff6853feffee53feffe657feffc262feff9c66feffdc69feffdc6dfeffec6ffeffd673feff6475feffe678feff1c79fefff67cfeff667dfeff6881feff0e85feff0089feff6a8ffefffa92feffde93feff9c97fefff09ffeff98a3feff38a4feffeca7feffa6a9feff4aadfeff5eb1feff42b5feffb2bafeff52befeff0ce3feff3ce6feff54e7feff9ceafeffdcecfeff68b8ffff98c5fffffec8ffff02e3ffff9ee6ffff4cecffffdaeffffffaefffff8af3ffffe4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -903,14 +498,14 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 7}
+      m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
-  - InitTestScene636565656601906000
+  - 
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
---- !u!114 &20
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -984,7 +579,7 @@ MonoBehaviour:
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &21
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -1006,9 +601,9 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 286
+    x: 235
     y: 91
-    width: 860
+    width: 700
     height: 444
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -1018,8 +613,8 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -430
-    m_HBaseRangeMax: 430
+    m_HBaseRangeMin: -350
+    m_HBaseRangeMax: 350
     m_VBaseRangeMin: -213.5
     m_VBaseRangeMax: 213.5
     m_HAllowExceedBaseRangeMin: 1
@@ -1030,7 +625,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -1038,29 +633,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 860
+      width: 700
       height: 427
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 430, y: 213.5}
+    m_Translation: {x: 350, y: 213.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -430
+      x: -350
       y: -213.5
-      width: 860
+      width: 700
       height: 427
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 860, y: 444}
+  m_LastWindowPixelSize: {x: 700, y: 444}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
---- !u!114 &22
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}

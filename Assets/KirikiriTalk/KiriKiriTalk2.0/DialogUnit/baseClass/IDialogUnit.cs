@@ -5,5 +5,8 @@ using UnityEngine;
 public interface IDialogUnit
 {
     //執行
-    void Excute(KiriKiriTalk kirikiriTalke);
+    void Excute(KiriTalk talk);
+
+    //立即完成當前功作
+    void Complete(KiriTalk talk);
 }
