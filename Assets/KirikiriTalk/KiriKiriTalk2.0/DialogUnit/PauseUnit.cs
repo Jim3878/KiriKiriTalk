@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseUnit : IDialogUnit
+public class PauseUnit : BaseDialogUnit
 {
-    public void Complete(KiriTalk talk)
+    public PauseUnit(int ID, PauseUnitFactory factory) : base(ID, factory)
     {
-        
     }
 
-    public void Excute(KiriTalk talk)
+    public override void Excute(ITypewriter typewriter)
     {
-        talk.TransTo(new PauseState(talk));
+        typewriter.stateController.TransTo(new PauseState(typewriter));
     }
     
 }

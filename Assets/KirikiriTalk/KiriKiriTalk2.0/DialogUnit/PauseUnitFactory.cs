@@ -2,26 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using KiriUtility;
 
+/// <summary>
+/// [waitclick]
+/// </summary>
 public class PauseUnitFactory : BaseDialogUnitFactory
 {
-    protected override IDialogUnit Build(List<KeyValuePair<string, string>> Value)
+    //[pause]
+    protected override IDialogUnit Build(int ID, Dictionary<string, string> keyValuePairs)
     {
-        return new PauseUnit();
+        return new PauseUnit(ID, this);
     }
-
-    protected override bool IsHeadMached(string header)
+    
+    protected override bool IsValueMatch(Dictionary<string, string> keyValuePairs)
     {
-        return header.Equals("pause");
-    }
-
-    protected override bool IsValueTypeMached(List<KeyValuePair<string, string>> value)
-    {
-        if (value.Count == 1)
-        {
-            //if (value[0].Value == null)
-                return true;
-        }
-        return false;
+        return (keyValuePairs.Count == 1) && keyValuePairs.IsValueMatch("waitclick", TypeEnum.NULL);
     }
 }

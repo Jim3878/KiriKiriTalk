@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/KirikiriTalk/KiriKiriTalk2.0/Sample2.unity
+  isLoaded: 1
+  isActive: 1

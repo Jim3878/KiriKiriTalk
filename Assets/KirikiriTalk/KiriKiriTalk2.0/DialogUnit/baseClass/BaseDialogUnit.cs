@@ -3,22 +3,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseDialogUnit : IDialogUnit {
-    
-    public void Complete(KiriTalk talk)
+public abstract class BaseDialogUnit : IDialogUnit
+{
+    private int _ID;
+    public int ID
     {
-        InnerComplete(talk);
-        talk.runningDialogUnitList.Remove(this);
+        get
+        {
+            return _ID;
+        }
+    }
+    private IDialogUnitFactory _factory;
+    protected IDialogUnitFactory factory
+    {
+        get {
+            return _factory;
+        }
+    }
+    
+    public BaseDialogUnit(int ID,IDialogUnitFactory factory)
+    {
+        this._ID = ID;
+        this._factory = factory;
     }
 
-    public abstract void InnerComplete(KiriTalk talk);
-    
-    public void Excute(KiriTalk talk)
+    public void Complete(ITypewriter typewriter)
     {
-        talk.runningDialogUnitList.Add(this);
-        InnerExcute(talk);
+       
     }
 
-    protected abstract void InnerExcute(KiriTalk talk);
-
+    public abstract void Excute(ITypewriter typewriter);
 }

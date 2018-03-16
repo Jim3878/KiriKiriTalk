@@ -141,10 +141,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\ColorHexTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogManagerTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DataPoolTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogCompilerTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogUnitFactoryTest.cs" />
     <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogUnitTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\StringTest.cs" />
+    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\UtilityTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />

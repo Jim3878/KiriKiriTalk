@@ -3,22 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharOutput : IDialogUnit
+public class CharOutput : IDialogUnit,IDelayable
 {
-    public string dialog;
-
-    public CharOutput(string dialog)
+    private string _dialog;
+    public string dialog
     {
-        this.dialog = dialog;
+        get
+        {
+            return _dialog;
+        }
+    }
+    private CharOutputFactory factory;
+    private int _ID;
+    public int ID
+    {
+        get
+        {
+            return _ID;
+        }
     }
 
-    public void Complete(KiriTalk talk)
+    public CharOutput(int ID, CharOutputFactory factory, string dialog)
     {
-        
+        this._ID = ID;
+        this._dialog = dialog;
+        this.factory = factory;
     }
+    
+    public void Complete(ITypewriter talk){ }
 
-    public void Excute(KiriTalk kirikiriTalke)
+    public void Excute(ITypewriter typeWriter)
     {
-        kirikiriTalke.AddDialog(dialog);
+        factory.AddDialog(typeWriter.textStyleManager.GetLeftStyle() + _dialog + typeWriter.textStyleManager.GetRightStyle());
     }
 }

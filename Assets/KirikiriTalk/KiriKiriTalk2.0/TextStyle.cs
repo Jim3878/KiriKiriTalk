@@ -21,7 +21,7 @@ public class TextStyle
             if (hasValue)
                 return string.Format("<{0}={1}>", style, value);
             else
-                return string.Format("</{0}>", style);
+                return string.Format("<{0}>", style);
         }
     }
     public string rightStyle

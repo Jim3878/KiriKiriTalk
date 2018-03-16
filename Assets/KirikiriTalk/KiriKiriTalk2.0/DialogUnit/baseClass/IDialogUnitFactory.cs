@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IDialogUnitFactory
 {
     //判斷字串能否轉換 - 生成用
-    bool CanBuild(string dialog);
+    bool CanBuild(Dictionary<string,string> keyValuePairs);
     //將字串轉換成DialogUnit - 生成用
-    IDialogUnit BuildDialogUnit(string dialog);
+    IDialogUnit BuildDialogUnit(int ID, Dictionary<string, string> keyValuePairs);
 }
