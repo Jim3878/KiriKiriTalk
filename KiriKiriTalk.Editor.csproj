@@ -131,7 +131,7 @@
       <HintPath>Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="NSubstitute">
-      <HintPath>Assets/KirikiriTalk/KiriKiriTalk2.0/Test/Editor/NSubstitute.dll</HintPath>
+      <HintPath>Assets/KiriKiriTalk2.0/Test/Editor/NSubstitute.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -141,11 +141,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DataPoolTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogCompilerTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogUnitFactoryTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\DialogUnitTest.cs" />
-    <Compile Include="Assets\KirikiriTalk\KiriKiriTalk2.0\Test\Editor\UtilityTest.cs" />
+    <Compile Include="Assets\KiriKiriTalk2.0\Test\Editor\DataPoolTest.cs" />
+    <Compile Include="Assets\KiriKiriTalk2.0\Test\Editor\DialogCompilerTest.cs" />
+    <Compile Include="Assets\KiriKiriTalk2.0\Test\Editor\DialogUnitFactoryTest.cs" />
+    <Compile Include="Assets\KiriKiriTalk2.0\Test\Editor\DialogUnitTest.cs" />
+    <Compile Include="Assets\KiriKiriTalk2.0\Test\Editor\UtilityTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
