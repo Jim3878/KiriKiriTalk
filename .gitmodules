@@ -1,0 +1,3 @@
+[submodule "DuckManager"]
+	path = DuckManager
+	url = https://github.com/Jim3878/DuckManager.git
