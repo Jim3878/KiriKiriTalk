@@ -5,10 +5,10 @@ using NUnit.Framework;
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using Krkr;
 
 public class DataPoolTest
 {
-
     public class RunningDialogManagerTest
     {
         [Test]
@@ -147,7 +147,7 @@ public class DataPoolTest
         [Test]
         public void count_AfterAddStyle_CountWillIncreass()
         {
-            TextStyleManager manager = new TextStyleManager();
+            IDialogStyleController manager = new DialogStyleController();
             string header1 = "ABCDD";
             string header2 = "KKKKK";
             string value2 = "5555";
@@ -163,7 +163,7 @@ public class DataPoolTest
         [Test]
         public void count_AfterAddDuplicatedStyle_CountWontIncreass()
         {
-            TextStyleManager manager = new TextStyleManager();
+            IDialogStyleController manager = new DialogStyleController();
             string header1 = "ABCDD";
             string header2 = "KKKKK";
             string value2 = "5555";
@@ -181,7 +181,7 @@ public class DataPoolTest
         [Test]
         public void GetStyle_InputHeader_CanFoundTextStyle()
         {
-            TextStyleManager manager = new TextStyleManager();
+            IDialogStyleController manager = new DialogStyleController();
             string header1 = "ABCDD";
             string header2 = "KKKKK";
             string value2 = "5555";
@@ -202,7 +202,7 @@ public class DataPoolTest
         [Test]
         public void AddStyle_InputSameHeaderSytle_OldStyleWillBeOverwrite()
         {
-            TextStyleManager manager = new TextStyleManager();
+            IDialogStyleController manager = new DialogStyleController();
             string header1 = "ABCDD";
             string header2 = "KKKKK";
             string value2 = "5555";
@@ -227,7 +227,7 @@ public class DataPoolTest
         [Test]
         public void GetRightLeftStyle_RightStyleAndLeftStyleWillSortingReversed()
         {
-            TextStyleManager manager = new TextStyleManager();
+            IDialogStyleController manager = new DialogStyleController();
             string header1 = "ABCDD";
             string header2 = "KKKKK";
             string value2 = "5555";

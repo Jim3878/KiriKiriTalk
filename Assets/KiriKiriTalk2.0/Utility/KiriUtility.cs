@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace KiriUtility
+namespace Krkr
 {
     public enum TypeEnum
     {

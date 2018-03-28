@@ -13,7 +13,7 @@ public interface ITypewriter  {
     StateController stateController { get; }
     IRunningDialogUnitManager runningDialogUnitManager { get; }
     IUnreadDialogUnitManager unreadDialogUnitManager { get; }
-    ITextStyleManager textStyleManager { get; }
+    IDialogStyleController textStyleManager { get; }
     bool isPause { get; }
     bool isStart { get; }
     bool isTerminate { get; }

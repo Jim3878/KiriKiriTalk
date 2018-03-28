@@ -45,14 +45,14 @@ public class Typewriter : ITypewriter
             return _stateController;
         }
     }
-    private ITextStyleManager _textStyleManager;
-    public ITextStyleManager textStyleManager
+    private IDialogStyleController _textStyleManager;
+    public IDialogStyleController textStyleManager
     {
         get
         {
             if (_textStyleManager == null)
             {
-                _textStyleManager = new TextStyleManager();
+                _textStyleManager = new DialogStyleController();
             }
             return _textStyleManager;
         }
