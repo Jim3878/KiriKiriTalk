@@ -10,11 +10,11 @@ namespace Krkr
         TypeDialog typer;
         ISpeedController speedCtrl;
         IDialogController dialogCtrl;
-        IDialogStyleController styleCtrl;
+        //IDialogStyleController styleCtrl;
 
-        public TypeDialogFactory(IDialogStyleController styleCtrl, ISpeedController speedCtrl, IDialogController dialogCtrl)
+        public TypeDialogFactory(ISpeedController speedCtrl, IDialogController dialogCtrl)
         {
-            this.styleCtrl = styleCtrl;
+            //this.styleCtrl = styleCtrl;
             this.speedCtrl = speedCtrl;
             this.dialogCtrl = dialogCtrl;
         }
@@ -23,7 +23,7 @@ namespace Krkr
         {
             if (typer == null)
             {
-                typer = new TypeDialog(styleCtrl,speedCtrl, dialogCtrl);
+                typer = new TypeDialog(speedCtrl, dialogCtrl);
             }
             typer.PushDialog(keyValuePairs["dialog"]);
             return typer;

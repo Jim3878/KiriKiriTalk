@@ -5,10 +5,10 @@ using UnityEngine;
 namespace Krkr {
     public class SetSize : BaseDialogCmd{
 
-        IDialogStyleController styleController;
+        IDialogStyleHandler styleController;
         int size;
 
-        public SetSize(IDialogStyleController styleController,int size)
+        public SetSize(IDialogStyleHandler styleController,int size)
         {
             this.size = size;
             this.styleController = styleController;

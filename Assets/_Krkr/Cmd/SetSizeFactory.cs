@@ -7,8 +7,8 @@ namespace Krkr
 {
     public class SetSizeFactory : IDialogCmdFactory
     {
-        IDialogStyleController styleController;
-        public SetSizeFactory(IDialogStyleController styleController)
+        IDialogStyleHandler styleController;
+        public SetSizeFactory(IDialogStyleHandler styleController)
         {
             this.styleController = styleController;
         }

@@ -33,6 +33,11 @@ namespace Krkr
             m_bAtStateBegin = false;
         }
 
+        protected void TouchStateBackToBegin()
+        {
+            m_bAtStateBegin = true;
+        }
+
         protected void TransTo(IState oState)
         {
             m_StateController.TransTo(oState);

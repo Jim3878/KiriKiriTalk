@@ -9,13 +9,11 @@ namespace Krkr
         Queue<string> dialogQueue = new Queue<string>();
         float lastTypeTime = 0;
         ISpeedController speedCtrl;
-        IDialogStyleController styleCtrl;
         IDialogController dialogCtrl;
 
-        public TypeDialog(IDialogStyleController styleCtrl, ISpeedController speedCtrl, IDialogController dialogCtrl)
+        public TypeDialog( ISpeedController speedCtrl, IDialogController dialogCtrl)
         {
             lastTypeTime = 0;
-            this.styleCtrl = styleCtrl;
             this.speedCtrl = speedCtrl;
             this.dialogCtrl = dialogCtrl;
         }
@@ -45,7 +43,7 @@ namespace Krkr
 
         private void KeyIn()
         {
-            dialogCtrl.TypeDialog(styleCtrl.GetLeftStyle() + dialogQueue.Dequeue() + styleCtrl.GetRightStyle());
+            dialogCtrl.TypeDialog(dialogQueue.Dequeue());
         }
         public override void StateEnd()
         {

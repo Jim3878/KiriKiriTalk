@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace KiriUtility
+namespace Krkr
 {
     public enum TypeEnum
     {
@@ -229,6 +229,8 @@ namespace KiriUtility
             return text.RemoveBrackets();
         }
 
+
+
         public static string ToDebugString(this Dictionary<string, string> values)
         {
             string o = "[";
@@ -247,20 +249,6 @@ namespace KiriUtility
             }
             o += "]";
             return o;
-        }
-
-        public static IDialogUnit[] CatchNoDelayUnit(this ITypewriter typerwriter)
-        {
-            List<IDialogUnit> dontDelayList = new List<IDialogUnit>();
-            var manager = typerwriter.unreadDialogUnitManager;
-            while (!manager.isEmpty && !(manager.PeekDialogUnit() is IDelayable))
-            {
-                var unit = manager.PopDialogUnit();
-                dontDelayList.Add(unit);
-            }
-
-            return dontDelayList.ToArray();
-
         }
 
         public static bool IsValueMatch(this Dictionary<string, string> keyValuePairs, string key, TypeEnum type)

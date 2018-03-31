@@ -14,6 +14,7 @@ namespace Krkr
         private KrController krCtrl;
         private DialogCompiler dialogCompiler;
         private Queue<IDialogCmd[]> dialogQueue;
+        private IDialogStyleHandler styleCtrl;
 
         public float delay
         {
@@ -53,12 +54,11 @@ namespace Krkr
 
         public KrLoader(Text dialogBubble)
         {
-            var styleCtrl = new DialogStyleController();
             krCtrl = new KrController();
             krCtrl.onEventCall += onEvent;
             dialogQueue = new Queue<IDialogCmd[]>();
-            dialogCompiler = new DialogCompiler( new TypeDialogFactory(styleCtrl,this, this), new FactoryInputCompiler());
-            dialogCompiler.AddDialogUnitFactory(new SetSizeFactory(styleCtrl));
+
+            dialogCompiler = new DialogCompiler(new TypeDialogFactory(this, this), new FactoryInputCompiler());
 
             this.dialogBubble = dialogBubble;
         }
@@ -90,13 +90,25 @@ namespace Krkr
 
         public void TypeDialog(string dialog)
         {
-            dialogBubble.text += dialog;
+            dialogBubble.text += styleCtrl.GetLeftStyle() + dialog + styleCtrl.GetRightStyle();
         }
 
         public void Update()
         {
             krCtrl.StateUpdate();
         }
-    }
 
+        public void AddComdFactory(params IDialogCmdFactory[] factorys)
+        {
+            foreach (var f in factorys)
+            {
+                dialogCompiler.AddDialogUnitFactory(f);
+            }
+        }
+
+        public void SetProperty(IDialogStyleHandler styleController)
+        {
+            this.styleCtrl = styleController;
+        }
+    }
 }
