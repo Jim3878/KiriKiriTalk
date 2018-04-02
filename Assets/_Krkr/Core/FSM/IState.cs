@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Krkr
+namespace DuckManager
 {
     public abstract class IState
     {
         private StateController m_StateController;
-        protected StateController Controller
+        protected StateController controller
         {
             get
             {
@@ -33,14 +33,14 @@ namespace Krkr
             m_bAtStateBegin = false;
         }
 
-        protected void TouchStateBackToBegin()
-        {
-            m_bAtStateBegin = true;
-        }
-
         protected void TransTo(IState oState)
         {
             m_StateController.TransTo(oState);
+        }
+
+        protected void BackToBeginState()
+        {
+            m_bAtStateBegin = true;
         }
 
         public virtual void StateBegin() { }

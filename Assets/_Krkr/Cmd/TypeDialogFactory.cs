@@ -8,18 +8,18 @@ namespace Krkr
     public class TypeDialogFactory : IDialogCmdFactory
     {
         TypeDialog typer;
-        ISpeedController speedCtrl;
-        IDialogController dialogCtrl;
+        ISpeedHandler speedCtrl;
+        IDialogHandler dialogCtrl;
         //IDialogStyleController styleCtrl;
 
-        public TypeDialogFactory(ISpeedController speedCtrl, IDialogController dialogCtrl)
+        public TypeDialogFactory(ISpeedHandler speedCtrl, IDialogHandler dialogCtrl)
         {
             //this.styleCtrl = styleCtrl;
             this.speedCtrl = speedCtrl;
             this.dialogCtrl = dialogCtrl;
         }
 
-        public IDialogCmd BuildDialogUnit(Dictionary<string, string> keyValuePairs)
+        public ICmd BuildDialogUnit(Dictionary<string, string> keyValuePairs)
         {
             if (typer == null)
             {

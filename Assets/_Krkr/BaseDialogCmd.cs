@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DuckManager;
 
 namespace Krkr
 {
-    public interface IDialogCmd { }
+    public interface ICmd { }
 
-    public class BaseDialogCmd : IState, IDialogCmd
+    public class IDialogCmd : ITask, ICmd
     {
-        protected IKrController krController;
-
-        public void SetKrProperty(IKrController ctrl)
+        protected ICmdManager queueController
         {
-            this.krController = ctrl;
+            get
+            {
+                return controller as ICmdManager;
+            }
         }
+        
     }
 }

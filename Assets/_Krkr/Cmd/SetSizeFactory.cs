@@ -12,7 +12,7 @@ namespace Krkr
         {
             this.styleController = styleController;
         }
-        public IDialogCmd BuildDialogUnit( Dictionary<string, string> metaDialog)
+        public ICmd BuildDialogUnit( Dictionary<string, string> metaDialog)
         {
             return new SetSize(styleController, metaDialog["size"].ToInt());
         }

@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Krkr
+namespace DuckManager
 {
-    public class WaitState : IState
+    public class IdleTask : ITask
     {
-        KrController controller;
-        public WaitState(KrController controller)
-        {
-            this.controller = controller;
-        }
-
         public override void StateUpdate()
         {
-            if (controller.CmdCount != 0)
+            if (GetTaskCount() != 0)
             {
-                controller.FlyToNextCmd();
+                TransToNextTask();
             }
+        }
+
+        public override void StateEnd()
+        {
+            base.StateEnd();
+            base.BackToBeginState();
         }
     }
 }

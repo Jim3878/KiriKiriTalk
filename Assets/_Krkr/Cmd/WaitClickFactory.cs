@@ -13,8 +13,8 @@ namespace Krkr
         {
             this._waitClick = new WaitClick(controller);
         }
-      
-        public IDialogCmd BuildDialogUnit(Dictionary<string, string> metaDialog)
+
+        public ICmd BuildDialogUnit(Dictionary<string, string> metaDialog)
         {
             return _waitClick;
         }

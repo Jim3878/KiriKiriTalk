@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Krkr
 {
-    public class SetName:BaseDialogCmd
+    public class SetName:IDialogCmd
     {
         string _name;
         ICharaNameHandler _nameHandler;
@@ -19,7 +19,7 @@ namespace Krkr
         {
             base.StateUpdate();
             _nameHandler.SetName(_name);
-            krController.FlyToNextCmd();
+            queueController.FlyToNextCmd();
         }
 
     }

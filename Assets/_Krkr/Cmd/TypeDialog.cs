@@ -4,19 +4,21 @@ using UnityEngine;
 
 namespace Krkr
 {
-    public class TypeDialog : BaseDialogCmd
+    public class TypeDialog : IDialogCmd
     {
+        //字串隊列
         Queue<string> dialogQueue = new Queue<string>();
         float lastTypeTime = 0;
-        ISpeedController speedCtrl;
-        IDialogController dialogCtrl;
+        ISpeedHandler speedCtrl;
+        IDialogHandler dialogCtrl;
 
-        public TypeDialog( ISpeedController speedCtrl, IDialogController dialogCtrl)
+        public TypeDialog( ISpeedHandler speedCtrl, IDialogHandler dialogCtrl)
         {
             lastTypeTime = 0;
             this.speedCtrl = speedCtrl;
             this.dialogCtrl = dialogCtrl;
         }
+
         public override void StateBegin()
         {
             lastTypeTime = Time.time + speedCtrl.delay;
@@ -29,15 +31,15 @@ namespace Krkr
 
         public override void StateUpdate()
         {
-            if (krController.isSkip)
+            if (queueController.isSkipLine)
             {
                 KeyIn();
-                krController.TranstToNextCmd();
+                queueController.TranstToNextCmd();
             }
             else if (Time.time - lastTypeTime > speedCtrl.delay)
             {
                 KeyIn();
-                krController.TranstToNextCmd();
+                queueController.TranstToNextCmd();
             }
         }
 

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+
 namespace Krkr
 {
-    public interface IKrController
+    public interface ICmdManager
     {
-        bool isSkip { get; }
+        bool isSkipLine { get; set; }
         void TranstToNextCmd();
         void FlyToNextCmd();
-        void CallEvent(EventArgs e);
     }
 }

@@ -8,11 +8,11 @@ namespace Krkr
     public class DialogCompiler
     {
         private IDialogCmdFactory defaultFactory;
-        protected List<IDialogCmd> dialogUnitList = new List<IDialogCmd>();
+        protected List<ICmd> dialogUnitList = new List<ICmd>();
         private List<IDialogCmdFactory> dialogUnitFactoryList = new List<IDialogCmdFactory>();
-        private IFactoryInputCompiler unitInputParser;
+        private IFactoryInputConverter unitInputParser;
 
-        public DialogCompiler(IDialogCmdFactory defaultFactory, IFactoryInputCompiler unitInputParser)
+        public DialogCompiler(IDialogCmdFactory defaultFactory, IFactoryInputConverter unitInputParser)
         {
             this.unitInputParser = unitInputParser;
             this.defaultFactory = defaultFactory;
@@ -23,9 +23,9 @@ namespace Krkr
             dialogUnitFactoryList.AddRange(dialogUnitFactory);
         }
 
-        public IDialogCmd[] Build(string dialog)
+        public ICmd[] Build(string dialog)
         {
-            this.dialogUnitList = new List<IDialogCmd>();
+            this.dialogUnitList = new List<ICmd>();
             Dictionary<string, string> dialogUnitInput;
             var dialogChar = dialog.ToCharArray();
             //Debug.Log(dialogChar.Length);
@@ -62,7 +62,7 @@ namespace Krkr
             return dialogUnitList.ToArray();
         }
 
-        IDialogCmd BuildToDialogUnit(Dictionary<string, string> keyValuePairs)
+        ICmd BuildToDialogUnit(Dictionary<string, string> keyValuePairs)
         {
             foreach (var factory in dialogUnitFactoryList)
             {

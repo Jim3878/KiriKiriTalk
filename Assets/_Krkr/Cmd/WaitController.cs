@@ -26,6 +26,7 @@ namespace Krkr {
 
         public void Resume()
         {
+            Debug.Log("resume");
             waitSymbol.SetActive(false);
             _isWait = false;
             if (onResume != null)

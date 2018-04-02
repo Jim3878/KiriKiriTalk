@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Krkr {
-    public class SetSize : BaseDialogCmd{
+    public class SetSize : IDialogCmd{
 
         IDialogStyleHandler styleController;
         int size;
@@ -17,7 +17,7 @@ namespace Krkr {
         public override void StateUpdate()
         {
             styleController.AddStyle(new TextStyle("Size",size.ToString()));
-            krController.FlyToNextCmd();
+            queueController.FlyToNextCmd();
         }
 
     }

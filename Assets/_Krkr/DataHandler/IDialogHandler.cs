@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Krkr
 {
-    public interface IDialogController
+    public interface IDialogHandler
     {
-        void SetProperty(IDialogStyleHandler styleController);
         void TypeDialog(string dialog);
         void Clear();
     }

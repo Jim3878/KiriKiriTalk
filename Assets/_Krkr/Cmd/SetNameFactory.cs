@@ -14,7 +14,7 @@ namespace Krkr
             this.nameHandler = nameHandler;
         }
 
-        public IDialogCmd BuildDialogUnit(Dictionary<string, string> metaDialog)
+        public ICmd BuildDialogUnit(Dictionary<string, string> metaDialog)
         {
             return new SetName(metaDialog["name"].ToStringNormalize(), nameHandler);
         }

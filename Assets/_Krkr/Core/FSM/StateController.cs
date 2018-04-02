@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Krkr
+namespace DuckManager
 {
     public class StateController
     {
         private IState m_oCurrentState = null;
-        public IState CurrentState
+        public IState currentState
         {
             get
             {
@@ -16,8 +16,8 @@ namespace Krkr
         }
         public Queue<IState> stateQueue=new Queue<IState>();
 
-        private bool m_bStarted = false;
-        private bool m_bTerminated = false;
+        protected bool m_bStarted = false;
+        protected bool m_bTerminated = false;
 
         public StateController() { }
         public StateController(IState oStartState) : this()

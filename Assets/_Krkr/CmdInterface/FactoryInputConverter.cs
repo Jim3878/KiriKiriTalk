@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Krkr
 {
-    public class FactoryInputCompiler : IFactoryInputCompiler
+    public class FactoryInputConverter : IFactoryInputConverter
     {
         public Dictionary<string, string> ToUnitInput(string text)
         {

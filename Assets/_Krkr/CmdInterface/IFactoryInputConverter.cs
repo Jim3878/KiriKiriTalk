@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace Krkr
 {
-    public interface IEventFactory
+
+    public interface IFactoryInputConverter
     {
-        EventArgs CreatEventArgs(object o);
+        Dictionary<string, string> ToUnitInput(string text);
     }
 }
